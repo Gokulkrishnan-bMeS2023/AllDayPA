@@ -21,7 +21,7 @@ const Home = () => {
         <AboutUs />
         <Box>
           <Box
-            bgImage={"assets/images/services-Data-Entry.png"}
+            bgImage={"assets/images/services-Data-Entry.webp"}
             height={"250px"}
             alignItems={"center"}
             justifyContent={"center"}

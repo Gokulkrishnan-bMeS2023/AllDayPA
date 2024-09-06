@@ -45,7 +45,7 @@ const BusinessProcesses = () => {
       </ScrollAnimation>
       <Flex w={"100%"} h={"100vh"}>
         <Image
-          src="assets/images/business-process.png"
+          src="assets/images/business-process.webp"
           w={"100%"}
           objectFit={"cover"}
         />

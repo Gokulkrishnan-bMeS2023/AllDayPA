@@ -15,7 +15,7 @@ const MessageUs = () => {
         >
           <Flex
             flex={2}
-            bgImage="assets/images/istockphoto.jpg"
+            bgImage="assets/images/istockphoto.webp"
             bgRepeat={"no-repeat"}
             bgPosition={"center"}
             bgSize={"cover"}

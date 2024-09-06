@@ -14,7 +14,7 @@ const BPO = () => {
             bg={"red"}
             bgSize="cover"
             bgPosition="center"
-            bgImage="url('/assets/images/The-AllDayPA-Journey.png')"
+            bgImage="url('/assets/images/The-AllDayPA-Journey.webp')"
             bgColor="rgba(0, 0, 0, 0.46)"
             backgroundBlendMode="overlay"
             p={4}

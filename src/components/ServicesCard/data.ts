@@ -1,21 +1,21 @@
 export const servicesdata = [
   {
     id: 1,
-    image: "assets/images/services1.png",
+    image: "assets/images/services1.webp",
     heading: "BPO Service Offerings",
     description:
       "Seamless and thorough solutions for your business process needs.",
   },
   {
     id: 2,
-    image: "assets/images/services2.png",
+    image: "assets/images/services2.webp",
     heading: "Efficient BPO Services On Demand",
     description:
       "Reliable, efficient BPO services for all your business needs. Always accessible.",
   },
   {
     id: 3,
-    image: "assets/images/services3.png",
+    image: "assets/images/services3.webp",
     heading: "Data Management Solutions",
     description:
       "Expert data management to ensure your business stays on top of its game.",

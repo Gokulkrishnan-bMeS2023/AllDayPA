@@ -49,7 +49,7 @@ const Services = () => {
         >
           <Flex flex={2} w={"100%"}>
             <Image
-              src="assets/images/services.png"
+              src="assets/images/services.webp"
               alt="#"
               objectFit={"cover"}
               h={"272px"}

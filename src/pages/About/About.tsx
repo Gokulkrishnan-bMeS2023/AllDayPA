@@ -43,7 +43,7 @@ const About = () => {
         </Flex>
         <Flex align={"center"} justify={"center"}>
           <Image
-            src="assets/images/The-AllDayPA-Journey.png"
+            src="assets/images/The-AllDayPA-Journey.webp"
             objectFit={"cover"}
             h={{ base: "169px", md: "421px", lg: "550px" }}
             w={{ base: "100%", md: "100%", lg: "67%" }}
