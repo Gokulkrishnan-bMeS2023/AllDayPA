@@ -1,8 +1,12 @@
+import OurServicesImg from "../../assets/images/Data Entry.webp"
+import DataEntrywebp1 from "../../assets/images/Document-Processing.webp"
+import DataEntrywebp2 from "../../assets/images/Customer-Support.webp"
+
 export const faqData = [
   {
     id:1,
     heading: "Data Entry",
-    imgUrl: "assets/images/Data Entry.webp",
+    imgUrl: OurServicesImg,
     items: [
       {
         question: "Accuracy and Precision",
@@ -24,7 +28,7 @@ export const faqData = [
   {
     id:2,
     heading: "Document Processing",
-    imgUrl: "assets/images/Document-Processing.webp",
+    imgUrl: DataEntrywebp1,
     items: [
       {
         question: "Scanning and Digitizing",
@@ -46,7 +50,7 @@ export const faqData = [
   {
     id:3,
     heading: "Customer Support",
-    imgUrl: "assets/images/Customer-Support.webp",
+    imgUrl: DataEntrywebp2,
     items: [
       {
         question: "Multi-Channel Support",

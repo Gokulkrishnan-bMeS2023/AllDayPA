@@ -9,11 +9,11 @@ import {
   Heading,
   Container,
 } from "@chakra-ui/react";
-import { FaCaretRight, FaCaretUp } from "react-icons/fa6";
 import { imageVariants, faqItemVariants } from "../../animation/variants";
 import { faqData } from "./data";
 import TextAnimation from "../../animation/TextAnimation/TextAnimation";
 import CardAnimation from "../../animation/CardAnimation/CardAnimation";
+import { FaCaretRight, FaCaretUp } from "../../assets/icons/icons";
 
 interface FAQItem {
   question: string;
@@ -53,7 +53,7 @@ const OurServices: React.FC<{
           />
         </motion.div>
         <Heading
-          as={"h3"}
+          // as={"h3"}
           fontSize={{ base: "18px", md: "18px", lg: "20px" }}
           mx={2}
           my={4}

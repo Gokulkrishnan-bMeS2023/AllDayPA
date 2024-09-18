@@ -8,6 +8,7 @@ import {
 import { motion } from "framer-motion";
 import { headingVariants, imageVariants3 } from "../../animation/variants";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
+import about from "../../assets/images/about.webp"
 
 const MotionHeading = motion(ChakraHeading);
 
@@ -22,7 +23,7 @@ const ImageComts = ({ heading, heading2 }: Props) => {
   return (
     <ScrollAnimation variant={imageVariants3}>
       <Box
-        bgImage={"assets/images/about.avif"}
+        bgImage={about}
         bgColor="rgba(0, 0, 0, 0.60)"
         backgroundBlendMode="overlay"
         bgSize="cover"

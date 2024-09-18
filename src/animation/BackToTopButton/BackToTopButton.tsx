@@ -1,6 +1,7 @@
 import { IconButton } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp } from "../../assets/icons/icons";
+
 
 const BackToTopButton = () => {
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);

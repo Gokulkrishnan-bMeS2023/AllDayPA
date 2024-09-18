@@ -9,7 +9,6 @@ const Contact = () => {
         heading="Connect with Our Business Process Experts"
         heading2="Reach Out to My Our Streamlined BPO Solutions"
       />
-
       <ContactComts />
     </PageTransitions>
   );

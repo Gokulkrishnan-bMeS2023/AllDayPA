@@ -2,16 +2,17 @@ import { Container, Flex, Image, Text } from "@chakra-ui/react";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants } from "../../animation/variants";
 import TextAnimation from "../../animation/TextAnimation/TextAnimation";
+import aboutimg1 from "../../assets/images/Logo-removebg-preview.webp";
+import aboutimg2 from "../../assets/images/About-Us.webp";
 
 const AboutUs = () => {
   return (
-    <Flex
-      maxH={"auto"}
-      // py={{ base: "10px", md: "23px", lg: "43px" }}
-      my={8}
-    >
+    <Flex maxH={"auto"} my={8}>
       <Container>
-        <Flex gap={"10%"} flexDir={{ base: "column", md: "row" }}>
+        <Flex
+          gap={{ base: "5%", md: "10%" }}
+          flexDir={{ base: "column", md: "row" }}
+        >
           <Flex flexDir={"column"} flex={3} align={"start"}>
             <TextAnimation text={"About us"} />
             <ScrollAnimation variant={headingVariants}>
@@ -38,21 +39,26 @@ const AboutUs = () => {
             alignItems={"center"}
             justify={"space-evenly"}
             flexDir={{ base: "column", md: "row" }}
+            gap={4}
           >
             <Flex>
               <Image
-                src="assets/images/Logo-removebg-preview.webp"
-                alt=""
+                src={aboutimg1}
+                alt="About Us"
+                width={"130px"}
                 height={"400px"}
-                width={"100%"}
+                loading="lazy"
+                objectFit={"contain"}
               />
             </Flex>
             <Flex>
               <Image
-                src="assets/images/About-Us.webp"
-                alt="img"
-                width={"100%"}
+                src={aboutimg2}
+                alt="About Us"
+                width={"230px"}
                 height={"400px"}
+                loading="lazy"
+                objectFit={"contain"}
               />
             </Flex>
           </Flex>

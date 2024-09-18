@@ -1,6 +1,7 @@
 import { Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
+import businessprocess from "../../assets/images/business-process.webp";
 
 const BusinessProcesses = () => {
   return (
@@ -45,9 +46,10 @@ const BusinessProcesses = () => {
       </ScrollAnimation>
       <Flex w={"100%"} h={"100vh"}>
         <Image
-          src="assets/images/business-process.webp"
+          src={businessprocess}
           w={"100%"}
           objectFit={"cover"}
+          alt="aboutimg2"
         />
       </Flex>
     </Flex>

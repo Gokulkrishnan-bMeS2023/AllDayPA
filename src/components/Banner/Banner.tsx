@@ -14,8 +14,9 @@ import {
   blinkVariant,
   textVariants,
 } from "./../../animation/variants";
-import { FaPhoneAlt } from "react-icons/fa";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
+import BannerImg from "../../assets/images/bpo_service_banner-1.webp";
+import { FaPhoneAlt } from "../../assets/icons/icons";
 
 const heroText1 = "Precision in Every Process –";
 const heroText2 = "BPO Services That Drive";
@@ -36,7 +37,7 @@ const Banner: React.FC = () => {
       bgSize="cover"
       // bgPosition="center"
       overflowY="auto"
-      bgImage="url('/assets/images/bpo_service_banner-1.webp')"
+      bgImage={BannerImg}
       width="100%"
       bgColor="rgba(0, 0, 0, 0.46)"
       backgroundBlendMode="overlay"
@@ -88,7 +89,11 @@ const Banner: React.FC = () => {
                 ))}
               </Heading>
             ))}
-            <ScrollAnimation variant={textVariants} align={"start"}>
+            <ScrollAnimation
+              variant={textVariants}
+              align={"start"}
+              alignItems={{ base: "center", md: "start" }}
+            >
               <Button
                 fontSize="15px"
                 bgColor="#0170B9"

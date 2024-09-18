@@ -1,6 +1,7 @@
 import { Container, Flex } from "@chakra-ui/react";
 import ContactForm from "../Form/Contact​Form";
 import TextAnimation from "../../animation/TextAnimation/TextAnimation";
+import MessageImg from "../../assets/images/istockphoto.webp";
 
 const MessageUs = () => {
   return (
@@ -15,13 +16,13 @@ const MessageUs = () => {
         >
           <Flex
             flex={2}
-            bgImage="assets/images/istockphoto.webp"
+            bgImage={MessageImg}
             bgRepeat={"no-repeat"}
             bgPosition={"center"}
             bgSize={"cover"}
             p={4}
             minH={"400px"}
-          ></Flex>
+          />
           <Flex flex={3} bg={"#fff"}>
             <Flex p={6} w={"100%"}>
               <ContactForm />

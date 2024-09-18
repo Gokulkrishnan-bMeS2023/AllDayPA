@@ -8,9 +8,10 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { menuVariants } from "../../animation/variants";
+import Logo from "../../assets/images/logo.webp";
+import { FiMenu, FiX } from "../../assets/icons/icons";
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -36,11 +37,7 @@ const Navbar: React.FC = () => {
     <Box bg="#FFF" color="#000">
       <Container>
         <Flex justify="space-between" align="center" minH="85px" wrap="wrap">
-          <Image
-            src="assets/images/cropped-logo3.webp"
-            alt="logo"
-            width={"100px"}
-          />
+          <Image src={Logo} alt="logo" width={"100px"} height={"100%"}/>
           <IconButton
             display={{ base: "flex", lg: "none" }}
             onClick={toggleMenu}

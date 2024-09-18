@@ -2,6 +2,8 @@ import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import { features } from "./data";
 import TextAnimation from "../../animation/TextAnimation/TextAnimation";
 import CardAnimation from "../../animation/CardAnimation/CardAnimation";
+import { Link } from "react-router-dom";
+import ImgBPO from "../../assets/images/The-AllDayPA-Journey.webp"
 
 const BPO = () => {
   return (
@@ -14,13 +16,13 @@ const BPO = () => {
             bg={"red"}
             bgSize="cover"
             bgPosition="center"
-            bgImage="url('/assets/images/The-AllDayPA-Journey.webp')"
+            bgImage={ImgBPO}
             bgColor="rgba(0, 0, 0, 0.46)"
             backgroundBlendMode="overlay"
             p={4}
           >
             <Heading
-              as={"h3"}
+              // as={"h3"}
               flex={1}
               lineHeight={10}
               fontSize={"40px"}
@@ -61,7 +63,7 @@ const BPO = () => {
                   </Box>
                   <Flex flexDir={"column"}>
                     <Heading
-                      as={"h6"}
+                      // as={"h6"}
                       fontSize={"22px"}
                       fontWeight={"bold"}
                       fontFamily={"Montserrat, sans-serif"}
@@ -69,12 +71,9 @@ const BPO = () => {
                       mb={4}
                       color={"#0170B9"}
                     >
-                      {feature.title}
+                      <Link to={"/services"}>{feature.title}</Link>
                     </Heading>
-                    <Text
-                      lineHeight={"26px"}
-                      color={"#7A7A7A"}
-                    >
+                    <Text lineHeight={"26px"} color={"#7A7A7A"}>
                       {feature.description}
                     </Text>
                   </Flex>

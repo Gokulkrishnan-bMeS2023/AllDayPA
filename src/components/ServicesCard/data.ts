@@ -1,21 +1,25 @@
+import ServicesCardImg1 from "../../assets/images/services1.webp";
+import ServicesCardImg2 from "../../assets/images/services2.webp";
+import ServicesCardImg3 from "../../assets/images/services3.webp";
+
 export const servicesdata = [
   {
     id: 1,
-    image: "assets/images/services1.webp",
+    image: ServicesCardImg1,
     heading: "BPO Service Offerings",
     description:
       "Seamless and thorough solutions for your business process needs.",
   },
   {
     id: 2,
-    image: "assets/images/services2.webp",
+    image: ServicesCardImg2,
     heading: "Efficient BPO Services On Demand",
     description:
       "Reliable, efficient BPO services for all your business needs. Always accessible.",
   },
   {
     id: 3,
-    image: "assets/images/services3.webp",
+    image: ServicesCardImg3,
     heading: "Data Management Solutions",
     description:
       "Expert data management to ensure your business stays on top of its game.",

@@ -1,5 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-import React from "react";
 import ImageComts from "../../components/ImageComts/ImageComts";
 import FAQComts from "../../components/FAQComts/FAQComts";
 import PageTransitions from "../../animation/PageTransitions/PageTransitions";

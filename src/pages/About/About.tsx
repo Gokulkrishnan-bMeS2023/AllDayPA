@@ -6,6 +6,7 @@ import ImageComts from "../../components/ImageComts/ImageComts";
 import PageTransitions from "../../animation/PageTransitions/PageTransitions";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
+import AboutImg from "../../assets/images/The-AllDayPA-Journey.webp";
 
 const About = () => {
   return (
@@ -43,8 +44,9 @@ const About = () => {
         </Flex>
         <Flex align={"center"} justify={"center"}>
           <Image
-            src="assets/images/The-AllDayPA-Journey.webp"
+            src={AboutImg}
             objectFit={"cover"}
+            alt="aboutimg"
             h={{ base: "169px", md: "421px", lg: "550px" }}
             w={{ base: "100%", md: "100%", lg: "67%" }}
           />

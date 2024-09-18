@@ -9,12 +9,18 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import { FaFacebookF, FaGoogle, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Logo from "../../assets/images/logo.webp";
+import {
+  FaFacebookF,
+  FaGoogle,
+  FaLinkedin,
+  FaTwitter,
+} from "../../assets/icons/icons";
 
 const Footer = () => {
   return (
     <footer>
-      <Flex bg={"#4B4F58"} color={"#fff"} flexDir={"column"}>
+      <Flex bg={"#4B4F58"} color={"#fff"} flexDir={"column"} minH="330px">
         <Container my={12}>
           <Flex
             align={"center"}
@@ -25,9 +31,12 @@ const Footer = () => {
             <Flex flex={2}>
               <Box bg={"#fff"} p={2}>
                 <Image
-                  src="assets/images/cropped-logo3.webp"
+                  src={Logo}
                   alt="logo"
-                  h={"95px"}
+                  width={"184px"}
+                  height={"95.4px"}
+                  loading="lazy"
+                  objectFit="contain"
                 />
               </Box>
             </Flex>
@@ -72,9 +81,9 @@ const Footer = () => {
             </Flex>
             <Flex flexDir={"column"} gap={8} flex={3}>
               <Heading
-                as={"h6"}
                 fontFamily={"Montserrat, sans-serif"}
                 fontSize={"22px"}
+                textAlign={{ base: "center", md: "start" }}
               >
                 Subscribe us
               </Heading>
@@ -109,10 +118,18 @@ const Footer = () => {
               Copyright © 2024 AllDayPA | Powered by BM e-Solutions
             </Text>
             <Flex gap={4}>
-              <FaFacebookF fontSize={20} />
-              <FaTwitter fontSize={20} />
-              <FaLinkedin fontSize={20} />
-              <FaGoogle fontSize={20} />
+              <Box w="20px" h="20px">
+                <FaFacebookF fontSize={20} />
+              </Box>
+              <Box w="20px" h="20px">
+                <FaTwitter fontSize={20} />
+              </Box>
+              <Box w="20px" h="20px">
+                <FaLinkedin fontSize={20} />
+              </Box>
+              <Box w="20px" h="20px">
+                <FaGoogle fontSize={20} />
+              </Box>
             </Flex>
           </Flex>
         </Container>

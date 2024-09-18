@@ -1,7 +1,6 @@
 import { Box, Container, Flex, Heading } from "@chakra-ui/react";
-import { FaLocationDot } from "react-icons/fa6";
-import { MdContactMail, MdOutlinePhoneIphone } from "react-icons/md";
 import TextAnimation from "../../animation/TextAnimation/TextAnimation";
+import { FaLocationDot, MdContactMail, MdOutlinePhoneIphone } from "../../assets/icons/icons";
 
 const ContactUs = () => {
   return (
@@ -15,7 +14,7 @@ const ContactUs = () => {
                 <MdOutlinePhoneIphone fontSize="24px" color="#0170B9" />
               </Box>
               <Heading
-                as={"h5"}
+                // as={"h5"}
                 fontSize={{ base: "18px", md: "20px" }}
                 fontFamily={"Roboto, sans-serif"}
               >
@@ -28,7 +27,7 @@ const ContactUs = () => {
                 <MdContactMail fontSize="24px" color="#0170B9" />
               </Box>
               <Heading
-                as={"h5"}
+                // as={"h5"}
                 fontSize={{ base: "18px", md: "20px" }}
                 fontFamily={"Roboto, sans-serif"}
               >
@@ -41,7 +40,7 @@ const ContactUs = () => {
                 <FaLocationDot fontSize="24px" color="#0170B9" />
               </Box>
               <Heading
-                as={"h5"}
+                // as={"h5"}
                 fontSize={{ base: "18px", md: "20px" }}
                 fontFamily={"Roboto, sans-serif"}
               >

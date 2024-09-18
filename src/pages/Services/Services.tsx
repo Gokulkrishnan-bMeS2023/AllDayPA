@@ -16,6 +16,7 @@ import {
 import PageTransitions from "../../animation/PageTransitions/PageTransitions";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
+import services from "../../assets/images/services.webp";
 
 const Services = () => {
   return (
@@ -49,8 +50,8 @@ const Services = () => {
         >
           <Flex flex={2} w={"100%"}>
             <Image
-              src="assets/images/services.webp"
-              alt="#"
+              src={services}
+              alt="servicesimg"
               objectFit={"cover"}
               h={"272px"}
               w={"100%"}

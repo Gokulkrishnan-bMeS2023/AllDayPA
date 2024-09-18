@@ -8,10 +8,10 @@ import {
 } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
 import { aboutData } from "./data";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
+import { FaLinkedin, FaTwitter } from "../../assets/icons/icons";
 
 const MotionBox = motion(Flex);
 

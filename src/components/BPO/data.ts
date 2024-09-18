@@ -1,7 +1,4 @@
-import { IoPersonSharp } from "react-icons/io5";
-import { FaLockOpen } from "react-icons/fa";
-import { FaRegMoneyBill1 } from "react-icons/fa6";
-import { HiWrenchScrewdriver } from "react-icons/hi2";
+import { FaLockOpen, FaRegMoneyBill1, HiWrenchScrewdriver, IoPersonSharp } from "../../assets/icons/icons";
 
 export const features = [
   {

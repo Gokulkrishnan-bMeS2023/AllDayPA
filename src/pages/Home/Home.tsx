@@ -6,10 +6,12 @@ import BPO from "../../components/BPO/BPO";
 import ContactUs from "../../components/Contact​Us/Contact​Us";
 import MessageUs from "../../components/Messageus/MessageUs";
 import { headingVariants } from "../../animation/variants";
-import { MdOutlinePhoneIphone } from "react-icons/md";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import PageTransitions from "../../animation/PageTransitions/PageTransitions";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
+import Img1 from "../../assets/images/services-Data-Entry.webp"
+import Img2 from "../../assets/images/about-002-free-img.webp"
+import { MdOutlinePhoneIphone } from "../../assets/icons/icons";
 
 const Home = () => {
   const fontSize = useBreakpointValue({ base: "35px", md: "40px", lg: "60px" });
@@ -21,7 +23,7 @@ const Home = () => {
         <AboutUs />
         <Box>
           <Box
-            bgImage={"assets/images/services-Data-Entry.webp"}
+            bgImage={Img1}
             height={"250px"}
             alignItems={"center"}
             justifyContent={"center"}
@@ -38,7 +40,11 @@ const Home = () => {
               </ScrollAnimation>
               <ScrollAnimation variant={headingVariants}>
                 <Flex align={"center"}>
-                  <Heading as={"h5"} fontSize={fontSize} textAlign={"center"}>
+                  <Heading
+                    // as={"h5"}
+                    fontSize={fontSize}
+                    textAlign={"center"}
+                  >
                     <span>BPO Solutions that Drive Results and Save Costs</span>
                   </Heading>
                 </Flex>
@@ -51,7 +57,7 @@ const Home = () => {
         <Testimonial />
         <Box>
           <Box
-            bgImage={"assets/images/about-002-free-img.webp"}
+            bgImage={Img2}
             height={"250px"}
             alignItems={"center"}
             justifyContent={"center"}
@@ -74,8 +80,11 @@ const Home = () => {
                   <Box border={"3px solid #fff"} borderRadius={"50%"} p={4}>
                     <MdOutlinePhoneIphone fontSize={fontSize} color="#fff" />
                   </Box>
-                  <Heading as={"h5"} fontSize={fontSize}>
-                    <span>Call +44 161 909 6900</span>
+                  <Heading
+                    // as={"h5"}
+                    fontSize={fontSize}
+                  >
+                    Call +44 161 909 6900
                   </Heading>
                 </Flex>
               </ScrollAnimation>
@@ -90,3 +99,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
