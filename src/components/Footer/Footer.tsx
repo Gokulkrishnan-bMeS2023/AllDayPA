@@ -56,25 +56,25 @@ const Footer = () => {
                 Home
               </Link>
               <Link
-                href="/About"
+                href="/about"
                 _hover={{ color: "#0170B9", textDecoration: "none" }}
               >
                 About
               </Link>
               <Link
-                href="/Services"
+                href="/services"
                 _hover={{ color: "#0170B9", textDecoration: "none" }}
               >
                 Services
               </Link>
               <Link
-                href="/FAQ"
+                href="/faq"
                 _hover={{ color: "#0170B9", textDecoration: "none" }}
               >
                 FAQ
               </Link>
               <Link
-                href="/Contact"
+                href="/contact"
                 _hover={{ color: "#0170B9", textDecoration: "none" }}
               >
                 Contact
