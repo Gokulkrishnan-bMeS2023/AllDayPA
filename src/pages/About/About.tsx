@@ -49,6 +49,7 @@ const About = () => {
             alt="aboutimg"
             h={{ base: "169px", md: "421px", lg: "550px" }}
             w={{ base: "100%", md: "100%", lg: "67%" }}
+            loading="lazy"
           />
         </Flex>
       </Flex>

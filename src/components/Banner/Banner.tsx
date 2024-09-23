@@ -22,7 +22,7 @@ const heroText1 = "Precision in Every Process –";
 const heroText2 = "BPO Services That Drive";
 const heroText3 = "Results";
 
-const Banner: React.FC = () => {
+const Banner = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: false });
 

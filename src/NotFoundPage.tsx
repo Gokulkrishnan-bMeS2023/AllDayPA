@@ -1,14 +1,26 @@
-import { Link } from "react-router-dom";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import PrimaryButton from "./components/Form/PrimaryButton";
 
 const NotFoundPage = () => {
   return (
-    <div className="container d-flex vh-100 text-center">
-      <div className="m-auto">
-        <h1>404 Not Found</h1>
-        <p>Sorry, the page you are looking for does not exist.</p>
-        <Link to="/">Go to Home Page</Link>
-      </div>
-    </div>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100vh"
+      textAlign="center"
+      px="4"
+    >
+      <Box>
+        <Heading as="h1" size="2xl" mb="6">
+          404 Not Found
+        </Heading>
+        <Text fontSize="lg" mb="6">
+          Sorry, the page you are looking for does not exist.
+        </Text>
+        <PrimaryButton Label="Go to Home Page" to="/" />
+      </Box>
+    </Box>
   );
 };
 

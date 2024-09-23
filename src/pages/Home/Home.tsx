@@ -9,8 +9,8 @@ import { headingVariants } from "../../animation/variants";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import PageTransitions from "../../animation/PageTransitions/PageTransitions";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
-import Img1 from "../../assets/images/services-Data-Entry.webp"
-import Img2 from "../../assets/images/about-002-free-img.webp"
+import Img1 from "../../assets/images/services-Data-Entry.webp";
+import Img2 from "../../assets/images/about-002-free-img.webp";
 import { MdOutlinePhoneIphone } from "../../assets/icons/icons";
 
 const Home = () => {
@@ -99,6 +99,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-

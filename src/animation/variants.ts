@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-//header
+// header
 export const headerVariants = {
   hidden: { opacity: 0, y: -20 },
   visible: {

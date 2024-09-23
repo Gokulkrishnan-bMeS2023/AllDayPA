@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   FormControl,
   FormLabel,
@@ -10,6 +9,7 @@ import {
   FormErrorMessage,
 } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
+import PrimaryButton from "./PrimaryButton";
 
 const ContactForm = () => {
   const toast = useToast();
@@ -114,6 +114,7 @@ const ContactForm = () => {
           status: "success",
           duration: 5000,
           isClosable: true,
+          position: "top",
         });
         // Clear the form
         setFormData({
@@ -129,6 +130,7 @@ const ContactForm = () => {
           status: "error",
           duration: 5000,
           isClosable: true,
+          position: "top",
         });
       }
     } catch (error) {
@@ -138,6 +140,7 @@ const ContactForm = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
+        position: "top",
       });
     } finally {
       setIsLoading(false);
@@ -152,8 +155,14 @@ const ContactForm = () => {
     borderRadius: 0,
   };
 
+  const handleScroll = (start: ScrollLogicalPosition, id: string) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ block: start, behavior: "smooth" });
+  };
+
   return (
-    <Box width="100%" fontFamily="Montserrat, sans-serif">
+    <Box width="100%" fontFamily="Montserrat, sans-serif" id="formdiv">
       <form onSubmit={handleSubmit}>
         <FormControl id="Name" mb={4} isInvalid={!!formErrors.Name}>
           <FormLabel fontWeight="bold">Name</FormLabel>
@@ -213,22 +222,11 @@ const ContactForm = () => {
         </FormControl>
 
         <Flex justify={{ base: "center", md: "start" }}>
-          <Button
-            bg="#0170B9"
-            color="#fff"
-            _hover={{ bg: "#0170B9" }}
-            type="submit"
-            borderRadius={0}
-            fontFamily="'Montserrat', sans-serif"
-            fontSize="12px"
-            letterSpacing="2px"
-            px="20px"
-            py="17px"
+          <PrimaryButton
+            Label="SUBMIT"
             isLoading={isLoading}
-            loadingText="Submitting"
-          >
-            SUBMIT
-          </Button>
+            handleClick={() => handleScroll("start", "formdiv")}
+          />
         </Flex>
       </form>
     </Box>
@@ -236,5 +234,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-

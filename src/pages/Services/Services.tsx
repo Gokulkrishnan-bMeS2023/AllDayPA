@@ -1,12 +1,4 @@
-import {
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  HStack,
-  VStack,
-} from "@chakra-ui/react";
+import { Flex, Heading, Image, Text, HStack, VStack } from "@chakra-ui/react";
 import ImageComts from "../../components/ImageComts/ImageComts";
 import ServicesCard from "../../components/ServicesCard/ServicesCard";
 import {
@@ -17,6 +9,7 @@ import PageTransitions from "../../animation/PageTransitions/PageTransitions";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
 import services from "../../assets/images/services.webp";
+import PrimaryButton from "../../components/Form/PrimaryButton";
 
 const Services = () => {
   return (
@@ -55,6 +48,7 @@ const Services = () => {
               objectFit={"cover"}
               h={"272px"}
               w={"100%"}
+              loading="lazy"
             />
           </Flex>
           <Flex flexDir={"column"} align={"start"} h={"auto"} m={4} flex={3}>
@@ -77,30 +71,8 @@ const Services = () => {
                 flexDir={{ base: "column", md: "row" }}
                 fontFamily={"Montserrat, sans-serif"}
               >
-                <Button
-                  bg={"#0170B9"}
-                  color={"#fff"}
-                  _hover={{ bg: "#0170B9" }}
-                  px={"20px"}
-                  py={"17px"}
-                  borderRadius={0}
-                  fontSize={"12px"}
-                  letterSpacing={1}
-                >
-                  DISCOVER MORE
-                </Button>
-                <Button
-                  bg={"#0170B9"}
-                  color={"#fff"}
-                  _hover={{ bg: "#0170B9" }}
-                  px={"20px"}
-                  py={"17px"}
-                  borderRadius={0}
-                  fontSize={"12px"}
-                  letterSpacing={1}
-                >
-                  REACH OUT
-                </Button>
+                <PrimaryButton Label="DISCOVER MORE" to="/contact" />
+                <PrimaryButton Label="REACH OUT" to="/contact" />
               </Flex>
             </ScrollAnimation>
           </Flex>

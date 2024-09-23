@@ -9,6 +9,7 @@ export {
   FaArrowLeft,
   FaArrowRight,
   FaChevronUp,
+  FaYelp 
 } from "react-icons/fa";
 export { IoPersonSharp } from "react-icons/io5";
 export {

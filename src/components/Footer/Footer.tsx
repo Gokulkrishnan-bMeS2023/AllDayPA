@@ -15,6 +15,7 @@ import {
   FaGoogle,
   FaLinkedin,
   FaTwitter,
+  FaYelp,
 } from "../../assets/icons/icons";
 
 const Footer = () => {
@@ -126,6 +127,9 @@ const Footer = () => {
               </Box>
               <Box w="20px" h="20px">
                 <FaLinkedin fontSize={20} />
+              </Box>
+              <Box w="20px" h="20px">
+                <FaYelp fontSize={20} />
               </Box>
               <Box w="20px" h="20px">
                 <FaGoogle fontSize={20} />

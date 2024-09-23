@@ -37,7 +37,13 @@ const Navbar: React.FC = () => {
     <Box bg="#FFF" color="#000">
       <Container>
         <Flex justify="space-between" align="center" minH="85px" wrap="wrap">
-          <Image src={Logo} alt="logo" width={"100px"} height={"100%"}/>
+          <Image
+            src={Logo}
+            alt="logo"
+            width={"100px"}
+            height={"100%"}
+            loading="lazy"
+          />
           <IconButton
             display={{ base: "flex", lg: "none" }}
             onClick={toggleMenu}

@@ -1,7 +1,8 @@
-import { Heading, VStack, Text, Flex, Button } from "@chakra-ui/react";
+import { Heading, VStack, Text, Flex } from "@chakra-ui/react";
 import { FAQdata } from "./data";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
+import PrimaryButton from "../Form/PrimaryButton";
 
 const FAQComts = () => {
   return (
@@ -60,16 +61,7 @@ const FAQComts = () => {
           </Text>
         </ScrollAnimation>
         <ScrollAnimation variant={textVariants}>
-          <Button
-            bg={"#0170B9"}
-            color={"#fff"}
-            w={"fit-content"}
-            px={"20px"}
-            py={"17px"}
-            borderRadius={0}
-          >
-            FIND OUT MORE
-          </Button>
+          <PrimaryButton Label=" FIND OUT MORE" to="/contact" />
         </ScrollAnimation>
       </Flex>
     </VStack>

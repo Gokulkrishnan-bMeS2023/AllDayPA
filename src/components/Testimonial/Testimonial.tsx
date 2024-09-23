@@ -102,6 +102,7 @@ export const TestimonialSlider = () => {
               src={testimonials[testimonialIndex].authorImage}
               name={testimonials[testimonialIndex].author}
               size="lg"
+              loading="lazy"
             />
             <Text
               fontWeight="bold"
