@@ -17,6 +17,7 @@ import {
   FaTwitter,
   FaYelp,
 } from "../../assets/icons/icons";
+import { Link as RouterLink } from "react-router-dom";
 
 // Social links data
 const socialLinks = [
@@ -45,7 +46,8 @@ const SocialIcon = ({
   ariaLabel: string;
 }) => (
   <Link
-    href={href}
+    as={RouterLink}
+    to={href}
     isExternal
     aria-label={ariaLabel}
     _hover={{ color: "#0170B9" }}
