@@ -18,19 +18,55 @@ import {
   FaYelp,
 } from "../../assets/icons/icons";
 
+const socialLinks = [
+  { icon: FaFacebookF, href: "https://www.facebook.com" },
+  { icon: FaTwitter, href: "https://www.twitter.com" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com" },
+  { icon: FaYelp, href: "https://www.yelp.com" },
+  { icon: FaGoogle, href: "https://www.google.com" },
+];
+
+const navLinks = ["Home", "About", "Services", "FAQ", "Contact"];
+
+const SocialIcon = ({
+  icon: Icon,
+  href,
+}: {
+  icon: React.ElementType;
+  href: string;
+}) => (
+  <Link href={href} isExternal _hover={{ color: "#0170B9" }}>
+    <Box w="20px" h="20px" cursor="pointer">
+      <Icon fontSize={20} />
+    </Box>
+  </Link>
+);
+
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
+  <Link href={href} _hover={{ color: "#0170B9", textDecoration: "none" }}>
+    {children}
+  </Link>
+);
+
 const Footer = () => {
   return (
     <footer>
-      <Flex bg={"#4B4F58"} color={"#fff"} flexDir={"column"} minH="330px">
+      <Flex bg={"#4B4F58"} color={"#fff"} flexDir={"column"} minH="320px">
         <Container my={12}>
           <Flex
-            align={"center"}
+            align={{ base: "center", md: "flex-start" }}
             flexDir={{ base: "column", md: "row" }}
-            alignItems={{ base: "center", md: "flex-start" }}
             gap={4}
           >
-            <Flex flex={2}>
-              <Box bg={"#fff"} p={2}>
+            {/* Logo Section */}
+            <Box flex={2}>
+              <Box p={2} bg={"#fff"} w={"fit-content"}>
                 <Image
                   src={Logo}
                   alt="logo"
@@ -40,46 +76,25 @@ const Footer = () => {
                   objectFit="contain"
                 />
               </Box>
-            </Flex>
+            </Box>
+
             <Flex
               flexDir={"column"}
               align={"start"}
               flex={2}
               fontSize={"18px"}
-              gap={"3px"}
               fontFamily={"Montserrat, sans-serif"}
             >
-              <Link
-                href="/"
-                _hover={{ color: "#0170B9", textDecoration: "none" }}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                _hover={{ color: "#0170B9", textDecoration: "none" }}
-              >
-                About
-              </Link>
-              <Link
-                href="/services"
-                _hover={{ color: "#0170B9", textDecoration: "none" }}
-              >
-                Services
-              </Link>
-              <Link
-                href="/faq"
-                _hover={{ color: "#0170B9", textDecoration: "none" }}
-              >
-                FAQ
-              </Link>
-              <Link
-                href="/contact"
-                _hover={{ color: "#0170B9", textDecoration: "none" }}
-              >
-                Contact
-              </Link>
+              {navLinks.map((text) => (
+                <NavLink
+                  key={text}
+                  href={text === "Home" ? "/" : `/${text.toLowerCase()}`}
+                >
+                  {text}
+                </NavLink>
+              ))}
             </Flex>
+
             <Flex flexDir={"column"} gap={8} flex={3}>
               <Heading
                 fontFamily={"Montserrat, sans-serif"}
@@ -104,6 +119,7 @@ const Footer = () => {
         </Container>
 
         <Divider my={4} />
+
         <Container my={2}>
           <Flex
             justify={"space-between"}
@@ -118,22 +134,11 @@ const Footer = () => {
             >
               Copyright © 2024 AllDayPA | Powered by BM e-Solutions
             </Text>
+
             <Flex gap={4}>
-              <Box w="20px" h="20px">
-                <FaFacebookF fontSize={20} />
-              </Box>
-              <Box w="20px" h="20px">
-                <FaTwitter fontSize={20} />
-              </Box>
-              <Box w="20px" h="20px">
-                <FaLinkedin fontSize={20} />
-              </Box>
-              <Box w="20px" h="20px">
-                <FaYelp fontSize={20} />
-              </Box>
-              <Box w="20px" h="20px">
-                <FaGoogle fontSize={20} />
-              </Box>
+              {socialLinks.map(({ icon, href }, index) => (
+                <SocialIcon key={index} icon={icon} href={href} />
+              ))}
             </Flex>
           </Flex>
         </Container>

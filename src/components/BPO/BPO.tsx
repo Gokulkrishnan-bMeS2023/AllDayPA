@@ -3,7 +3,7 @@ import { features } from "./data";
 import TextAnimation from "../../animation/TextAnimation/TextAnimation";
 import CardAnimation from "../../animation/CardAnimation/CardAnimation";
 import { Link } from "react-router-dom";
-import ImgBPO from "../../assets/images/The-AllDayPA-Journey.webp"
+import ImgBPO from "../../assets/images/The-AllDayPA-Journey.webp";
 
 const BPO = () => {
   return (
@@ -26,10 +26,8 @@ const BPO = () => {
               flex={1}
               lineHeight={10}
               fontSize={"40px"}
-              // wordBreak="break-word"
               fontWeight={"bold"}
               color={"#fff"}
-              // maxWidth={{ base: "100%", md: "80%" }}
             >
               BPO services designed to streamline your operations and enhance
               overall productivity

@@ -12,7 +12,6 @@ const BusinessProcesses = () => {
           Streamline Your Business Processes
         </Heading>
       </ScrollAnimation>
-
       <ScrollAnimation variant={textVariants}>
         <Text mt={4} fontFamily={"Montserrat, sans-serif"} textAlign={"center"}>
           Enhance your operations with our affordable BPO solutions. Our

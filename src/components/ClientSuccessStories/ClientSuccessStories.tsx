@@ -8,11 +8,9 @@ import {
 } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-// Motion components
 const MotionFlex = motion(Flex);
 const MotionHeading = motion(Heading);
 
-// AnimatedHeading component
 const AnimatedHeading = ({
   value,
   duration = 2,
@@ -34,7 +32,6 @@ const AnimatedHeading = ({
   return <MotionHeading {...props}>{rounded}</MotionHeading>;
 };
 
-// StatCard component
 const StatCard = ({ number, label, delay, inView, symbol }: any) => {
   return (
     <MotionFlex
@@ -54,7 +51,7 @@ const StatCard = ({ number, label, delay, inView, symbol }: any) => {
           fontFamily={"'Staatliches', display"}
           fontWeight={400}
           value={number}
-          duration={2} // Adjust duration as needed
+          duration={2}
           inView={inView}
         />
         <Text fontWeight={"bold"} fontSize={"36px"}>
@@ -73,7 +70,6 @@ const StatCard = ({ number, label, delay, inView, symbol }: any) => {
   );
 };
 
-// ClientSuccessStories component
 const ClientSuccessStories = () => {
   const cardRef = useRef(null);
   const inView = useInView(cardRef, { once: false });
@@ -154,4 +150,3 @@ const ClientSuccessStories = () => {
 };
 
 export default ClientSuccessStories;
-

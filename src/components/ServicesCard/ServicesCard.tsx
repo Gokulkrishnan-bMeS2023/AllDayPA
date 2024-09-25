@@ -3,10 +3,17 @@ import CardAnimation from "../../animation/CardAnimation/CardAnimation";
 import ScrollAnimation from "../../animation/ScrollAnimation/ScrollAnimation";
 import { headingVariants, textVariants } from "../../animation/variants";
 
+interface ServiceData {
+  id: number;
+  image?: string;
+  heading: string;
+  description: string;
+}
+
 interface Props {
   heading: string;
   heading2: string;
-  servicesdata: any[];
+  servicesdata: ServiceData[];
 }
 
 const ServicesCard = ({ heading, heading2, servicesdata }: Props) => {

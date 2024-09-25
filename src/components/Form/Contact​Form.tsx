@@ -25,7 +25,6 @@ const ContactForm = () => {
     email: "",
   });
 
-  // Handle input change
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -36,20 +35,14 @@ const ContactForm = () => {
     }));
     setFormErrors((prevErrors) => ({
       ...prevErrors,
-      [name]: "", // Clear error message when user starts typing
+      [name]: "",
     }));
   };
 
-  // Validate email format
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  // Handle input blur (when user leaves input field)
-  const handleBlur = (
-    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     if (!value.trim()) {
       setFormErrors((prevErrors) => ({
@@ -67,71 +60,47 @@ const ContactForm = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Form validation
+    const { Name, email } = formData;
     const errors: Record<string, string> = {};
-    if (!formData.Name.trim()) {
-      errors.Name = "This field is required";
-    }
-    if (!formData.email.trim()) {
-      errors.email = "This field is required";
-    } else if (!validateEmail(formData.email)) {
-      errors.email = "Please enter a valid email address";
-    }
 
-    setFormErrors((prevErrors) => ({
-      ...prevErrors,
-      ...errors,
-    }));
+    if (!Name.trim()) errors.Name = "This field is required";
+    if (!email.trim()) errors.email = "This field is required";
+    else if (!validateEmail(email)) errors.email = "Invalid email address";
 
     if (Object.keys(errors).length > 0) {
-      return; // Prevent submission if there are validation errors
+      setFormErrors((prevErrors) => ({
+        ...prevErrors,
+        ...errors,
+      }));
+      return;
     }
 
     setIsLoading(true);
 
-    const formJson = JSON.stringify({
-      ...formData,
-      access_key: "757f119e-6bf2-41ab-b249-f7f259c8d585",
-    });
-
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: formJson,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          access_key: "757f119e-6bf2-41ab-b249-f7f259c8d585",
+        }),
       });
       const result = await response.json();
-      console.log(result);
+
+      toast({
+        title: result.success ? "Form submitted." : "Submission failed.",
+        description: result.success
+          ? "We'll get back to you soon."
+          : "Please try again later.",
+        status: result.success ? "success" : "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
 
       if (result.success) {
-        toast({
-          title: "Form submitted.",
-          description:
-            "We've received your message and will get back to you soon.",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
-        });
-        // Clear the form
-        setFormData({
-          Name: "",
-          email: "",
-          CompanyName: "",
-          message: "",
-        });
-      } else {
-        toast({
-          title: "Submission failed.",
-          description: "Please try again later.",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
-        });
+        setFormData({ Name: "", email: "", CompanyName: "", message: "" });
       }
     } catch (error) {
       toast({
@@ -162,37 +131,32 @@ const ContactForm = () => {
   };
 
   return (
-    <Box width="100%" fontFamily="Montserrat, sans-serif" id="formdiv">
+    <Box width="100%" fontFamily="Montserrat, sans-serif">
       <form onSubmit={handleSubmit}>
-        <FormControl id="Name" mb={4} isInvalid={!!formErrors.Name}>
-          <FormLabel fontWeight="bold">Name</FormLabel>
-          <Input
-            type="text"
-            name="Name"
-            value={formData.Name}
-            onChange={handleChange}
-            onBlur={handleBlur} // Validate when input loses focus
-            {...formInputProps}
-          />
-          {formErrors.Name && (
-            <FormErrorMessage>{formErrors.Name}</FormErrorMessage>
-          )}
-        </FormControl>
-
-        <FormControl id="email" mb={4} isInvalid={!!formErrors.email}>
-          <FormLabel fontWeight="bold">Email</FormLabel>
-          <Input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            onBlur={handleBlur} // Validate when input loses focus
-            {...formInputProps}
-          />
-          {formErrors.email && (
-            <FormErrorMessage>{formErrors.email}</FormErrorMessage>
-          )}
-        </FormControl>
+        {["Name", "email"].map((field) => (
+          <FormControl
+            key={field}
+            id={field}
+            mb={4}
+            isInvalid={!!formErrors[field as keyof typeof formErrors]}
+          >
+            <FormLabel fontWeight="bold">
+              {field.charAt(0).toUpperCase() + field.slice(1)}
+              <span style={{ color: "red", paddingLeft: "5px" }}>*</span>
+            </FormLabel>
+            <Input
+              type={field === "email" ? "email" : "text"}
+              name={field}
+              value={formData[field as keyof typeof formData]}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              {...formInputProps}
+            />
+            <FormErrorMessage>
+              {formErrors[field as keyof typeof formErrors]}
+            </FormErrorMessage>
+          </FormControl>
+        ))}
 
         <FormControl id="CompanyName" mb={4}>
           <FormLabel fontWeight="bold">Company Name</FormLabel>
@@ -201,7 +165,6 @@ const ContactForm = () => {
             name="CompanyName"
             value={formData.CompanyName}
             onChange={handleChange}
-            onBlur={handleBlur}
             {...formInputProps}
           />
         </FormControl>
@@ -212,7 +175,6 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            onBlur={handleBlur}
             rows={4}
             bg="#FAFAFA"
             _hover={{ bg: "#fff" }}

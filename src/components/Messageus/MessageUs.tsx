@@ -5,7 +5,7 @@ import MessageImg from "../../assets/images/istockphoto.webp";
 
 const MessageUs = () => {
   return (
-    <Flex flexDirection={"column"} my={10}>
+    <Flex flexDirection={"column"} my={10} id="formdiv">
       <Container>
         <TextAnimation text={"Message us"} />
         <Flex

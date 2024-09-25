@@ -35,7 +35,7 @@ const Banner = () => {
       alignItems={"center"}
       height="auto"
       bgSize="cover"
-      // bgPosition="center"
+      bgPosition={{ base: "center", md: "initial" }}
       overflowY="auto"
       bgImage={BannerImg}
       width="100%"

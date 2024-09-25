@@ -13,37 +13,51 @@ import { menuVariants } from "../../animation/variants";
 import Logo from "../../assets/images/logo.webp";
 import { FiMenu, FiX } from "../../assets/icons/icons";
 
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/services", label: "Services" },
+  { path: "/faq", label: "FAQ" },
+  { path: "/contact", label: "Contact" },
+];
+
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const closeMenu = () => setIsMenuOpen(false);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/services", label: "Services" },
-    { path: "/faq", label: "FAQ" },
-    { path: "/contact", label: "Contact" },
-  ];
+  const renderLinks = (isMobile = false) =>
+    navLinks.map((link) => (
+      <Link
+        as={RouterLink}
+        to={link.path}
+        key={link.path}
+        onClick={isMobile ? closeMenu : undefined}
+        _hover={{ color: "#0170B9", textDecoration: "none" }}
+        _activeLink={{
+          color: "#0170B9",
+          fontWeight: "bold",
+          borderBottom: "2px solid #0170B9",
+        }}
+        fontFamily="Montserrat, sans-serif"
+        style={
+          location.pathname === link.path ? { color: "#0170B9" } : undefined
+        }
+        px={isMobile ? 6 : 0}
+        py={isMobile ? 2 : 0}
+        width={isMobile ? "100%" : undefined}
+      >
+        {link.label}
+      </Link>
+    ));
 
   return (
     <Box bg="#FFF" color="#000">
       <Container>
-        <Flex justify="space-between" align="center" minH="85px" wrap="wrap">
-          <Image
-            src={Logo}
-            alt="logo"
-            width={"100px"}
-            height={"100%"}
-            loading="lazy"
-          />
+        <Flex justify="space-between" align="center" minH="85px">
+          <Image src={Logo} alt="logo" width="100px" loading="lazy" />
           <IconButton
             display={{ base: "flex", lg: "none" }}
             onClick={toggleMenu}
@@ -61,30 +75,9 @@ const Navbar: React.FC = () => {
             as="nav"
             align="center"
             gap={10}
-            wrap="wrap"
-            display={{ base: "none", md: "none", lg: "flex" }}
+            display={{ base: "none", lg: "flex" }}
           >
-            {navLinks.map((link) => (
-              <Link
-                as={RouterLink}
-                to={link.path}
-                key={link.path}
-                _hover={{ color: "#0170B9", textDecoration: "none" }}
-                _activeLink={{
-                  color: "#0170B9",
-                  fontWeight: "bold",
-                  borderBottom: "2px solid #0170B9",
-                }}
-                fontFamily={"Montserrat, sans-serif"}
-                style={
-                  location.pathname === link.path
-                    ? { color: "#0170B9" }
-                    : undefined
-                }
-              >
-                {link.label}
-              </Link>
-            ))}
+            {renderLinks()}
           </Flex>
         </Flex>
       </Container>
@@ -99,36 +92,12 @@ const Navbar: React.FC = () => {
           as="nav"
           direction="column"
           align="start"
-          display={{ base: "flex", md: "flex", lg: "none" }}
-          bgColor={"#f9f9f9"}
+          display={{ base: "flex", lg: "none" }}
+          bgColor="#f9f9f9"
           py={2}
-          borderTop={"1px solid #e9e9e9"}
+          borderTop="1px solid #e9e9e9"
         >
-          {navLinks.map((link) => (
-            <Link
-              as={RouterLink}
-              to={link.path}
-              key={link.path}
-              _hover={{ color: "#0170B9", textDecoration: "none" }}
-              _activeLink={{
-                color: "#0170B9",
-                fontWeight: "bold",
-                borderBottom: "2px solid #0170B9",
-              }}
-              fontFamily={"Montserrat, sans-serif"}
-              style={
-                location.pathname === link.path
-                  ? { color: "#0170B9" }
-                  : undefined
-              }
-              width={"100%"}
-              px={6}
-              py={2}
-              onClick={closeMenu}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {renderLinks(true)}
         </Flex>
       </motion.div>
     </Box>

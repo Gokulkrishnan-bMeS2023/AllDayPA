@@ -38,7 +38,7 @@ const AboutUs = () => {
             flex={2}
             alignItems={"center"}
             justify={"space-evenly"}
-            flexDir={{ base: "column", md: "row" }}
+            // flexDir={{ base: "column", md: "row" }}
             gap={4}
           >
             <Flex>
