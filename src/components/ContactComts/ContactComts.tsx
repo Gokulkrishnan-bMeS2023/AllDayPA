@@ -20,7 +20,6 @@ const ContactComts = () => {
       initial="hidden"
       animate="visible"
       variants={textVariants}
-      id="formdiv"
     >
       <MotionFlex
         flexDir={{ base: "column", md: "row" }}
@@ -51,7 +50,7 @@ const ContactComts = () => {
             info@alldaypa.com
           </MotionText>
         </MotionFlex>
-        <MotionFlex flex={1} w={"100%"} variants={textVariants}>
+        <MotionFlex flex={1} w={"100%"} variants={textVariants} id="formdiv">
           <ContactForm />
         </MotionFlex>
       </MotionFlex>

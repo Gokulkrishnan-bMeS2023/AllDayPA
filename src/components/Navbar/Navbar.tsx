@@ -36,11 +36,6 @@ const Navbar: React.FC = () => {
         key={link.path}
         onClick={isMobile ? closeMenu : undefined}
         _hover={{ color: "#0170B9", textDecoration: "none" }}
-        _activeLink={{
-          color: "#0170B9",
-          fontWeight: "bold",
-          borderBottom: "2px solid #0170B9",
-        }}
         fontFamily="Montserrat, sans-serif"
         style={
           location.pathname === link.path ? { color: "#0170B9" } : undefined
