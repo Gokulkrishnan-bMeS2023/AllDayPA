@@ -34,7 +34,7 @@ const CardAnimation = ({ children, delayOrder }: CardAnimationProps) => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       custom={delayOrder}
-      mb={4}
+      // mb={4}
       p={4}
       border="1px solid #e0e0e0"
       borderRadius="md"
